@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>ThreadScout by PearlLemon</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <h1>ThreadScout</h1>
+    <p>Find real-time forum discussions asking for product or service recommendations.</p>
+
+    <label for="query">Search for:</label>
+    <input type="text" id="query" placeholder="e.g. best SEO agency for SaaS">
+
+    <label for="sources">Select sources:</label>
+    <select id="sources" multiple>
+      <option value="site:reddit.com">Reddit</option>
+      <option value="site:quora.com">Quora</option>
+      <option value="inurl:forum">Generic Forums</option>
+    </select>
+
+    <label for="niche">Add a niche booster (optional):</label>
+    <select id="niche">
+      <option value="">None</option>
+      <option value="for startups">Startups</option>
+      <option value="for SaaS">SaaS</option>
+      <option value="for ecom">Ecommerce</option>
+      <option value="for crypto">Crypto</option>
+    </select>
+
+    <button onclick="generateQuery()">Generate Search</button>
+
+    <div id="searchOutput"></div>
+    <div id="relatedSuggestions"></div>
+
+    <h2>Prompt Assistant</h2>
+    <ul>
+      <li><button onclick="copyPrompt('Does this forum thread contain a request for recommendations?')">Is it a recommendation thread?</button></li>
+      <li><button onclick="copyPrompt('Summarize the top 3 services/products suggested in this thread.')">Summarize top 3 suggestions</button></li>
+      <li><button onclick="copyPrompt('List the services most frequently mentioned.')">List frequent mentions</button></li>
+    </ul>
+
+    <h2>Session Tracker</h2>
+    <table id="sessionTable">
+      <thead>
+        <tr><th>URL</th><th>Notes</th><th>Status</th></tr>
+      </thead>
+      <tbody id="trackerBody"></tbody>
+    </table>
+    <button onclick="clearTracker()">Clear Session</button>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>

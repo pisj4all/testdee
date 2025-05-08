@@ -1,0 +1,26 @@
+body {
+  font-family: Arial, sans-serif;
+  padding: 20px;
+  background-color: #f9f9f9;
+}
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+input, select, button {
+  display: block;
+  width: 100%;
+  margin: 10px 0;
+  padding: 10px;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+table, th, td {
+  border: 1px solid #ccc;
+}
+th, td {
+  padding: 10px;
+}
